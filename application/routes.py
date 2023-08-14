@@ -86,7 +86,7 @@ def add_new_card():
     user_no = int(request.headers.get('UserNo'))
 
     try:
-        data = json.loads(request.get_json())
+        data = request.get_json()
         card_number = data['Card']
         is_selected = data['IsSelected']
     except:
@@ -110,11 +110,15 @@ def add_new_card():
 @request_controller_decorator
 def payment():
     user_no = int(request.headers.get('UserNo'))
-    data = json.loads(request.get_json())
 
-    card_number = data['Card']
-    is_selected = data['IsSelected']
-    total_amount = data['TotalAmount']
+    try:
+        data = request.get_json()
+        card_number = data['Card']
+        is_selected = data['IsSelected']
+        total_amount = data['TotalAmount']
+    except:
+        return "For this operation, Card and IsSelected information are required!"
+
 
     doc = mongodb.find_documents(collection_name='Documents',
                                 query={'userNo': user_no})[0]

@@ -4,7 +4,7 @@ import requests
 
 class HealthCheck():
     def __init__(self, url):
-        self.url = 'http://16.171.129.13:80'
+        self.url = 'http://loadbalancer-1498206481.eu-north-1.elb.amazonaws.com/health'
 
     def __call__(self):
         r = requests.get(self.url)
@@ -15,5 +15,8 @@ class HealthCheck():
 health_check = HealthCheck()
 flag = True
 while flag:
-    if health_check():
+    control = health_check()
+    if control:
+        print(control)
+    
 

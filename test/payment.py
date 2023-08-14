@@ -21,10 +21,10 @@ def payment(user_no, auth_code, card_number, total_amount, endpoint, is_selected
 with open('../config.json', 'r') as fp:
     server_cfg = json.load(fp)['ServerConfig']
 
-url = f"http://{server_cfg['Host']}:{server_cfg['Port']}"
+url = 'http://loadbalancer-1498206481.eu-north-1.elb.amazonaws.com'
 
-user_no = 82967981
-auth_code = 'XeH7AklA8x'
+user_no = 50039747
+auth_code = 'DFWV7pkGrS'
 card_number = ''.join([str(random.randint(0, 9)) for _ in range(16)])
 endpoint='/payment'
 total_amount = 813
