@@ -1,0 +1,14 @@
+{
+    "MongoDBConfig": {
+        "URI": "mongodb+srv://eneskaracabay:92SO6IrmHjczFZEB@database.83uzfbq.mongodb.net/?retryWrites=true&w=majority",
+        "Database": "DB",
+        "Collection": "Documents"
+    },
+
+    "ServerConfig": {
+        "Host": "localhost",
+        "Port": 80
+    },
+
+    "AppSecretKey": "my_secret_key"
+}
