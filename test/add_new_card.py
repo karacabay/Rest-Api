@@ -24,6 +24,9 @@ with open('../config.json', 'r') as fp:
 
 url = f"http://{server_cfg['Host']}:{server_cfg['Port']}"
 url = 'http://loadbalancer-1498206481.eu-north-1.elb.amazonaws.com'
+# url = 'http://16.171.129.13:80'
+# url = 'http://13.48.149.251:80'
+
 user_no = 2250058
 auth_code = 'qUiiNr3uzcd'
 card_number = ''.join([str(random.randint(0, 9)) for _ in range(16)])

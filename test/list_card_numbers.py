@@ -14,14 +14,16 @@ def list_card_info(user_no, auth_code, endpoint):
 
 with open('../config.json', 'r') as fp:
     server_cfg = json.load(fp)['ServerConfig']
-
+server_cfg['Host'] = '16.171.129.13'
 url = f"http://{server_cfg['Host']}:{server_cfg['Port']}"
-
-user_no = 82967981
-auth_code = 'XeH7AklA8x'
+url = 'http://13.48.149.251:80'
+url = 'http://localhost:8080'
+user_no = 2250058
+auth_code = 'qUiiNr3uzc'
 endpoint='/list-card-info'
 
 r = list_card_info(user_no, auth_code, endpoint)
-data = json.loads(r.content)
-print(data)
+print(r.content)
+# data = json.loads(r.content)
+# print(data)
 

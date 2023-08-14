@@ -51,7 +51,7 @@ def request_controller_decorator(f):
             return msg
         user_info = user_info[0]
         control = bcrypt.check_password_hash(user_info['authCode'], auth_code)
-        if control:
+        if not control:
             msg = 'Permission denied!'
             logs['Result'] = msg
             save_logs(logs)
