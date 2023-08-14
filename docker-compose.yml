@@ -1,9 +1,8 @@
 version: "3"
 services:
-  web:
+  rest_api:
     network_mode: "host"        
     restart: on-failure
-  rest_api:
     build:
       context: .
       dockerfile: ./Dockerfile

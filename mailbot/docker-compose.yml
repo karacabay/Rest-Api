@@ -1,9 +1,9 @@
 version: "3"
 services:
-  web:
+  
+  mail_bot:
     network_mode: "host"        
     restart: on-failure
-  mail_bot:
     build:
       context: .
       dockerfile: ./Dockerfile
