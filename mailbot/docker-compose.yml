@@ -1,0 +1,11 @@
+version: "3"
+services:
+  mail_bot:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: mail_bot
+    ports:
+      - "80:80"
+
+    command: python main.py 
