@@ -5,7 +5,4 @@ services:
       context: .
       dockerfile: ./Dockerfile
     container_name: mail_bot
-    ports:
-      - "80:80"
-
     command: python main.py 
