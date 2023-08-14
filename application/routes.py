@@ -66,7 +66,10 @@ def request_controller_decorator(f):
         mongodb.update_document(collection_name='Documents', 
                                         query={'userNo': user_no}, 
                                         update_data={'onProcess': True})
-        result = f()
+        try:
+            result = f()
+        except:
+            result = 'Server error: An unexpected error occurred while processing your request.'
         mongodb.update_document(collection_name='Documents', 
                                 query={'userNo': user_no}, 
                                 update_data={'onProcess': False})
@@ -142,7 +145,11 @@ def payment():
 @request_controller_decorator
 def refund():
     user_no = int(request.headers.get('UserNo'))
-    data = json.loads(request.get_json())
+    try:
+        data = request.get_json()
+    except:
+        return "For this operation, TotalAmount information are required!"
+    
     refund_amount = data['RefundAmount']
     doc = mongodb.find_documents(collection_name='Documents',
                                     query={'userNo': user_no})[0]
