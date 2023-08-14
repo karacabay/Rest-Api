@@ -21,7 +21,7 @@ with open('../config.json', 'r') as fp:
     server_cfg = json.load(fp)['ServerConfig']
 
 url = f"http://{server_cfg['Host']}:{server_cfg['Port']}"
-
+# url = 'http://ec2-13-48-149-251.eu-north-1.compute.amazonaws.com:80'
 user_no = 2250058
 auth_code = 'qUiiNr3uzcd'
 card_number = ''.join([str(random.randint(0, 9)) for _ in range(16)])

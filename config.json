@@ -6,7 +6,7 @@
     },
 
     "ServerConfig": {
-        "Host": "localhost",
+        "Host": "13.48.149.251",
         "Port": 80
     },
 

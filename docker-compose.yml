@@ -1,0 +1,12 @@
+version: "3"
+services:
+  rest_api:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: rest_api
+    ports:
+      - "80:80"
+
+    command: python main.py 
+
